@@ -1,0 +1,35 @@
+html{
+  background: gray;
+  overflow: hidden;
+}
+
+
+body{
+  display: flex;
+  justify-content: center;
+}
+
+#floor{
+  background: black;
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  top: 80vh;
+  z-index: -50;
+}
+
+
+.player{
+  background: #222222;
+  position: absolute;
+  left: 10vw;
+  top: 0;
+  z-index: 0;
+}
+
+.bloc{
+  z-index: 100;
+  width: 5vw;
+  background: #222222;
+  position: absolute;
+}
