@@ -1,5 +1,3 @@
-
-
 class Network {
   constructor(As,Bs,weights) {
     this.output = new OutputNode()
@@ -118,6 +116,7 @@ let blocs = []
 let players = []
 let deads = []
 let score = 1
+let highscore = score
 const no = 350
 for (let i = 0; i < no; i++) {
   const player = new Player(i,new Network([Math.random(),Math.random()],[Math.random(),Math.random()],[Math.random(),Math.random()]))
@@ -185,7 +184,6 @@ function newGen(){
   gen++
   score = 1
   console.log("New gen")
-  document.title = "Gen "+ gen
   deads = []
   for (let i = 0; i < blocs.length; i++) {
     const bloc = blocs[i]
@@ -227,6 +225,11 @@ function addBloc(){
   element.setAttribute("class","bloc")
   score += (no / players.length) / 1000
   if (score > 5) score = 5
+  if (score > highscore)
+  {
+	  highscore=score
+	  document.title = "HighScore "+ score
+  }
   element.style.top = blocTopHeight+"px"
   element.style.height = blocHeight+"vh"
   element.style.left = "100vw"
